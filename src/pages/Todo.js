@@ -15,7 +15,7 @@ const TodoContain = styled.div`
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 `;
 
-function TodoPage({ todos, isPending }) {
+function TodoPage() {
   return (
     <TodoContain>
       <TodoList>

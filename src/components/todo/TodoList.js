@@ -1,10 +1,10 @@
-import React, { useState, useCallback, useEffect, useRef } from 'react';
-import AddForm from './AddForm';
-import Todo from './Todo';
-import styled from 'styled-components';
+import React, { useState, useCallback, useEffect, useRef } from "react";
+import AddForm from "./AddForm";
+import Todo from "./Todo";
+import styled from "styled-components";
 
 const StyledTodoList = styled.div`
-  .todolist-box{
+  .todolist-box {
     width: 400px;
     height: 500px;
     /* background-color: rgba(255,255,255,0.7); */
@@ -14,7 +14,7 @@ const StyledTodoList = styled.div`
     /* border-radius: 20px; */
     /* box-shadow: 0px 0px 5px rgba(0,0,0, 0.1); */
   }
-  .header{
+  .header {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -22,7 +22,7 @@ const StyledTodoList = styled.div`
     align-items: center;
     margin-bottom: 10px;
   }
-  .info{
+  .info {
     width: 85%;
     display: flex;
     justify-content: space-between;
@@ -30,37 +30,37 @@ const StyledTodoList = styled.div`
     height: 50px;
     margin-top: 20px;
   }
-  .info > span{
+  .info > span {
     font-weight: bold;
     /* display: none; */
   }
   .info > span::selection {
     color: green;
-	}
-	h1::selection {
-		color: orange;
+  }
+  h1::selection {
+    color: orange;
   }
   h1 {
     margin: 0;
     font-size: 22px;
     line-height: 50px;
   }
-  
-  .date{
+
+  .date {
     width: 85%;
     font-size: 13px;
-    font-weight:600;
+    font-weight: 600;
   }
-  .date > span::selection{
-		color: orange;
-  }
-  .day{
-    margin-left: 5px;
-  }
-  .day::selection{
+  .date > span::selection {
     color: orange;
   }
-  ul{
+  .day {
+    margin-left: 5px;
+  }
+  .day::selection {
+    color: orange;
+  }
+  ul {
     padding: 0;
     height: 340px;
     overflow-x: hidden;
@@ -69,31 +69,29 @@ const StyledTodoList = styled.div`
   ul::-webkit-scrollbar {
     display: none;
   }
-`
+`;
 
 const TodoList = () => {
-  const [todoList, setTodoList] = useState(()=>{
-    const localTodoList = localStorage.getItem('todoList');
+  const [todoList, setTodoList] = useState(() => {
+    const localTodoList = localStorage.getItem("todoList");
     return localTodoList ? JSON.parse(localTodoList) : [];
   });
   const [id, setId] = useState(0);
-  // useEffect는 마운트될 때 실행1 업데이트 될때 실행2되는데 업데이트 될때만 실행시키고 싶을때 쓰는 방법은 useRef(false)가 있음
-  // https://xiubindev.tistory.com/100
   const isMount = useRef(true);
 
   useEffect(() => {
     if (!isMount.current) {
-      localStorage.setItem('todoList', JSON.stringify(todoList));
-      localStorage.setItem('id', id);
+      localStorage.setItem("todoList", JSON.stringify(todoList));
+      localStorage.setItem("id", id);
     }
   }, [todoList, id]);
 
   useEffect(() => {
-    const localTodoList = localStorage.getItem('todoList');
+    const localTodoList = localStorage.getItem("todoList");
     if (localTodoList) {
       setTodoList(JSON.parse(localTodoList));
     }
-    const localId = localStorage.getItem('id');
+    const localId = localStorage.getItem("id");
     if (localId) {
       setId(parseInt(localId));
     }
@@ -101,27 +99,27 @@ const TodoList = () => {
   }, []);
 
   const addTodo = useCallback(
-  (todo) => (e) => {
-    console.log('add');
-    e.preventDefault();
-    if (todo) {
-      const currentDate = new Date().toLocaleDateString();
-      setTodoList((prevTodoList) => [
-        ...prevTodoList,
-        {
-          id: id,
-          todo: todo,
-          isChecked: false,
-          date: currentDate
-        },
-      ]);
-      setId((prevId) => prevId + 1);
-      localStorage.setItem('todoList', JSON.stringify(todoList));
-      localStorage.setItem('id', id);
-    }
-  },
-  [id, todoList]
-);
+    (todo) => (e) => {
+      console.log("add");
+      e.preventDefault();
+      if (todo) {
+        const currentDate = new Date().toLocaleDateString();
+        setTodoList((prevTodoList) => [
+          ...prevTodoList,
+          {
+            id: id,
+            todo: todo,
+            isChecked: false,
+            date: currentDate,
+          },
+        ]);
+        setId((prevId) => prevId + 1);
+        localStorage.setItem("todoList", JSON.stringify(todoList));
+        localStorage.setItem("id", id);
+      }
+    },
+    [id, todoList]
+  );
 
   const updateTodo = useCallback(
     (id, todo, isChecked) => {
@@ -141,12 +139,11 @@ const TodoList = () => {
     (id) => () => {
       const newTodoList = todoList.filter((todoInfo) => todoInfo.id !== id);
       setTodoList(newTodoList);
-      localStorage.setItem('todoList', JSON.stringify(newTodoList));
-      localStorage.setItem('id', id);
+      localStorage.setItem("todoList", JSON.stringify(newTodoList));
+      localStorage.setItem("id", id);
     },
     [todoList]
   );
-  
 
   const toggleCheck = useCallback(
     (id) => () => {
@@ -159,31 +156,30 @@ const TodoList = () => {
     },
     [todoList]
   );
-  
+
   const today = new Date();
-  const dateString = today.toLocaleString('ko-KR', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
+  const dateString = today.toLocaleString("ko-KR", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   });
-  const dayName = today.toLocaleString('ko-KR', { weekday: 'long' });
-  
+  const dayName = today.toLocaleString("ko-KR", { weekday: "long" });
+
   //남은 할일 갯수 보기
   // const todos = useTodoState();
   // const undoneTasks = todos.filter(todo => !todo.done);
-  //{undoneTasks.length}개 
-  const undone = todoList.filter((todo)=> !todo.isChecked);
-
+  //{undoneTasks.length}개
+  const undone = todoList.filter((todo) => !todo.isChecked);
 
   return (
     <StyledTodoList>
       <div className="todolist-box">
-        <div className='header'>
-          <div className='info'>
+        <div className="header">
+          <div className="info">
             <h1>오늘의 할 일 목록</h1>
-            <span className='undone'>{undone.length}개 </span>
+            <span className="undone">{undone.length}개 </span>
           </div>
-          <div className='date'>  
+          <div className="date">
             <span>{dateString}</span>
             <span className="day">{dayName}</span>
           </div>
