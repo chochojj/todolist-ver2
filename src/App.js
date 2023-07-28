@@ -1,16 +1,14 @@
 // import logo from './logo.svg';
-import { useState } from 'react';
-import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Suspense, lazy } from 'react';
-import { createGlobalStyle } from 'styled-components';
-// import useFetch from './util/useFetch';
-const Header = lazy(() => import('./components/header'));
-const SideBar = lazy(() => import('./components/SideBar'));
-const TodoPage = lazy(() => import('./pages/TodoPage'));
-const Diary = lazy(() => import('./pages/Diary'));
-const Schedule = lazy(() => import('./pages/Schedule'));
-const Madeby = lazy(() => import('./pages/MadeBy'));
+import { useState, Suspense, lazy } from "react";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createGlobalStyle } from "styled-components";
+const Header = lazy(() => import("./components/common/header"));
+const SideBar = lazy(() => import("./components/common/SideBar"));
+const TodoPage = lazy(() => import("./pages/Todo"));
+const Diary = lazy(() => import("./pages/Diary"));
+const Schedule = lazy(() => import("./pages/Schedule"));
+const Madeby = lazy(() => import("./pages/MadeBy"));
 
 const GlobalStyle = createGlobalStyle`
   *{

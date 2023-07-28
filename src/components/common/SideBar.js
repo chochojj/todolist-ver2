@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import carrot_hover from '../assets/imgs/carrot_hover.png';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import carrot_hover from "../../assets/imgs/carrot_hover.png";
+import { Link } from "react-router-dom";
 
 const Side = styled.nav`
   position: fixed;
