@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil";
-import { openSideState, darkModeState } from "../../atom/atoms";
+import { openSideState, darkModeState } from "../../atoms/atoms";
 import styled from "styled-components";
 import rabbit from "../../assets/imgs/rabbit.png";
 import carrot from "../../assets/imgs/carrot.png";
