@@ -51,21 +51,6 @@ const StyledLink = styled(Link)`
   }
 `;
 
-//애니메이션으로 부드러운 효과를 주려면
-//클릭 이벤트를 했을때 위치 이동을 시켜주는 css를 이벤트로 넣어야 할듯
-//예시
-//const [right, setRight] = useState(300);
-// const animate = () => {
-//   setHeight((right) => (right === 0 ? 300 : 0));
-// };
-// <Motion style={{ right: spring(right) }}>
-// {({ right }) => (
-//   <div style={{ ...styles.menu, right }}>
-//     <p style={styles.selection}>Selection 1</p>
-//     <p style={styles.selection}>Selection 2</p>
-//   </div>
-// )}
-// </Motion>
 function SideBar() {
   return (
     <Side>

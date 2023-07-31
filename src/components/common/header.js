@@ -1,3 +1,5 @@
+import { useRecoilState } from "recoil";
+import { openSideState, darkModeState } from "../../atom/atoms";
 import styled from "styled-components";
 import rabbit from "../../assets/imgs/rabbit.png";
 import carrot from "../../assets/imgs/carrot.png";
@@ -37,17 +39,28 @@ const Mainheader = styled.header`
   }
 `;
 
-const Header = ({ openside, setSide }) => {
+const Header = () => {
+  const [openSide, setOpenSide] = useRecoilState(openSideState);
+  const [darkMode, setDarkMode] = useRecoilState(darkModeState);
+
   const openHandler = () => {
-    // console.log(openside)
-    setSide(!openside);
+    setOpenSide((prev) => !prev);
+  };
+
+  const darkModehandler = () => {
+    setDarkMode((prev) => !prev);
   };
 
   return (
     <Mainheader>
       <ul>
         <li>
-          <img src={rabbit} className="rabbit" alt="테마" />
+          <img
+            onClick={darkModehandler}
+            src={rabbit}
+            className="rabbit"
+            alt="테마"
+          />
         </li>
         <li>
           <img
