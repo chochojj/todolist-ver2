@@ -19,6 +19,16 @@ const GlobalStyle = createGlobalStyle`
     justify-content: center;
     align-items: center;
     background-image: url(https://i.pinimg.com/564x/01/04/fa/0104fa2f4166c80aceec00e243e15d25.jpg);
+    
+    &.dark-mode {
+      background-color: red;
+      color: #fff;
+    }
+    
+    &.light-mode {
+      background-color: #fff;
+      color: #333;
+    }
   }
 `;
 
