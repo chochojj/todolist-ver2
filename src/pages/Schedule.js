@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css'; // css import
-import styled from 'styled-components';
+import { useState } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css"; // css import
+import styled from "styled-components";
 
 const Monthly = styled.div`
   width: 800px;
   height: fit-content;
-  padding: 10px;
+  padding: 10px 10px 30px 10px;
   background-color: rgba(255, 255, 255, 0.7);
   display: flex;
   flex-direction: column;
@@ -107,7 +107,7 @@ const Monthly = styled.div`
 
 function Schedule() {
   const [diaries, setDiaries] = useState(() => {
-    const storedDiaries = localStorage.getItem('diaries');
+    const storedDiaries = localStorage.getItem("diaries");
     return storedDiaries ? JSON.parse(storedDiaries) : [];
   });
   const [value, onChange] = useState(new Date());
