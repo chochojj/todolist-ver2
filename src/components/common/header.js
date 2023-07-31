@@ -49,7 +49,6 @@ const Header = () => {
 
   const darkModehandler = () => {
     setDarkMode((prev) => !prev);
-    document.body.classList.toggle("dark-mode", !darkMode);
   };
 
   return (

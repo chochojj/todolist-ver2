@@ -2,6 +2,7 @@ import TodoList from "../components/todo/TodoList";
 import Todo from "../components/todo/Todo";
 import AddForm from "../components/todo/AddForm";
 import styled from "styled-components";
+import { theme } from "../style/theme";
 
 const TodoContain = styled.div`
   width: 400px;
@@ -9,8 +10,8 @@ const TodoContain = styled.div`
   background-color: rgba(255, 255, 255, 0.7);
   display: flex;
   flex-direction: column;
-
   align-items: center;
+  color: ${({ theme }) => theme.color};
   border-radius: 20px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 `;
