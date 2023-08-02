@@ -2,6 +2,7 @@ import { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css"; // css import
 import styled from "styled-components";
+import { theme } from "../style/theme";
 
 const Monthly = styled.div`
   width: 800px;
@@ -47,29 +48,29 @@ const Monthly = styled.div`
   }
   .react-calendar__tile:enabled:hover,
   .react-calendar__tile:enabled:focus {
-    background: rgba(254, 194, 194, 0.15);
+    background: ${({ theme }) => theme.calenderFocus};
     color: rgba(130, 130, 130, 1);
     border-radius: 6px;
   }
   .react-calendar__tile--now {
-    background: rgba(254, 194, 194, 0.15);
+    background: ${({ theme }) => theme.calenderFocus};
     border-radius: 6px;
     font-weight: bold;
     color: rgba(130, 130, 130, 1);
   }
   .react-calendar__tile--now:enabled:hover,
   .react-calendar__tile--now:enabled:focus {
-    background: rgba(254, 194, 194, 0.15);
+    background: ${({ theme }) => theme.calenderFocus};
     border-radius: 6px;
     font-weight: bold;
     color: rgba(130, 130, 130, 1);
   }
   .react-calendar__tile--hasActive:enabled:hover,
   .react-calendar__tile--hasActive:enabled:focus {
-    background: rgba(254, 194, 194, 0.15);
+    background: ${({ theme }) => theme.calenderFocus};
   }
   .react-calendar__tile--active {
-    background: rgba(254, 194, 194, 0.15);
+    background: ${({ theme }) => theme.calenderFocus};
     border-radius: 6px;
     font-weight: bold;
     color: white;

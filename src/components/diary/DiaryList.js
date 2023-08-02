@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const FormUl = styled.ul`
   width: 90%;
@@ -6,8 +6,8 @@ const FormUl = styled.ul`
   height: 380px;
   overflow: auto;
 
-  li{
-    height: 20px;
+  li {
+    height: 38px;
     background-color: rgba(250, 233, 211, 0.3);
     display: flex;
     align-items: center;
@@ -27,13 +27,13 @@ const FormUl = styled.ul`
   ::-webkit-scrollbar-thumb:hover {
     background-color: rgba(1, 107, 8, 0.2);
   }
-  .title{
+  .title {
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
   }
-  
+
   button {
     /* font-size: 1vh; */
     width: 20px;
@@ -46,24 +46,34 @@ const FormUl = styled.ul`
     border: none;
     background-color: transparent;
   }
-  button:hover{
+  button:hover {
     cursor: pointer;
-    background-color:rgba(133, 86, 40,0.7);
+    background-color: rgba(133, 86, 40, 0.7);
     color: white;
   }
-
 `;
 
-function DiaryList({ diaries, handleDelete, handleSelect, selectedDiaryIndex }) {
-    return (
-      <FormUl>
-        {diaries.map((diary, index) => (
-          <li key={index} className={selectedDiaryIndex === index ? 'selected' : ''}>
-            <div className='title' onClick={() => handleSelect(index)}><span>{diary.title}</span><span>{diary.date}</span> </div>
-            <button onClick={() => handleDelete(index)}>X</button>
-          </li>
-        ))}
-      </FormUl>
-    );
-  }
-  export default DiaryList;
+function DiaryList({
+  diaries,
+  handleDelete,
+  handleSelect,
+  selectedDiaryIndex,
+}) {
+  return (
+    <FormUl>
+      {diaries.map((diary, index) => (
+        <li
+          key={index}
+          className={selectedDiaryIndex === index ? "selected" : ""}
+        >
+          <div className="title" onClick={() => handleSelect(index)}>
+            <span>{diary.title}</span>
+            <span>{diary.date}</span>{" "}
+          </div>
+          <button onClick={() => handleDelete(index)}>X</button>
+        </li>
+      ))}
+    </FormUl>
+  );
+}
+export default DiaryList;

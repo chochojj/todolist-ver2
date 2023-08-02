@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import carrot_hover from "../../assets/imgs/carrot_hover.png";
+import { theme } from "../../style/theme";
 import { Link } from "react-router-dom";
 
 const Side = styled.nav`
@@ -8,9 +9,10 @@ const Side = styled.nav`
   right: 0;
   width: 260px;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: ${({ theme }) => theme.containerBackground};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding-top: 20px;
+  backdrop-filter: blur(5px);
 `;
 
 const StyledLink = styled(Link)`
@@ -33,7 +35,7 @@ const StyledLink = styled(Link)`
     }
 
     span {
-      color: #dd8351;
+      color: ${({ theme }) => theme.orangeText};
     }
   }
 

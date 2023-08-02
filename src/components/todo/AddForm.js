@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, memo } from "react";
 import styled from "styled-components";
+import { theme } from "../../style/theme";
 
 const StyledAddForm = styled.div`
   button::selection {
@@ -14,18 +15,22 @@ const StyledAddForm = styled.div`
     align-items: center;
   }
   input {
-    width: 270px;
-    height: 30px;
-    background-color: rgba(255, 201, 54, 0.3);
+    width: 275px;
+    height: 32px;
+    background-color: ${({ theme }) => theme.orangeInput};
     border: none;
+    padding: 0 10px;
     border-radius: 5px 0 0 5px;
+  }
+  input::placeholder {
+    color: ${({ theme }) => theme.color};
   }
 
   button {
     width: 65px;
     height: 32px;
     border: none;
-    background-color: rgba(1, 107, 8, 0.4);
+    background-color: ${({ theme }) => theme.greenButton};
     font-weight: bold;
     font-family: "NanumRg";
     border-radius: 0 5px 5px 0;

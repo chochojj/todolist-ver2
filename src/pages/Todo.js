@@ -7,7 +7,7 @@ import { theme } from "../style/theme";
 const TodoContain = styled.div`
   width: 400px;
   height: 500px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: ${({ theme }) => theme.containerBackground};
   display: flex;
   flex-direction: column;
   align-items: center;

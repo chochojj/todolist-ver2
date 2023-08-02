@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
+import { theme } from "../style/theme";
 import DiaryForm from "../components/diary/DiaryForm";
 import DiaryList from "../components/diary/DiaryList";
 import DiaryView from "../components/diary/DiaryView";
@@ -7,8 +8,10 @@ import DiaryView from "../components/diary/DiaryView";
 const TodayLog = styled.div`
   width: 800px;
   height: 500px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: ${({ theme }) => theme.containerBackground};
+  color: ${({ theme }) => theme.color};
   display: flex;
+  padding: 20px 0 0 0;
   flex-direction: column;
   align-items: center;
   border-radius: 20px;
@@ -53,7 +56,7 @@ const AddDiaryButton = styled.button`
   background-color: rgba(0, 0, 0, 0);
   font-weight: bold;
   margin-right: 20px;
-  color: #a96650;
+  color: ${({ theme }) => theme.orangeText};
   cursor: pointer;
 `;
 

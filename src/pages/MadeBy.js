@@ -1,11 +1,13 @@
-import React from 'react';
-import lay from '../assets/imgs/lay.png';
-import styled from 'styled-components';
+import React from "react";
+import lay from "../assets/imgs/lay.png";
+import styled from "styled-components";
+import { theme } from "../style/theme";
 
 const Made = styled.section`
   width: 400px;
   height: 500px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: ${({ theme }) => theme.containerBackground};
+  color: ${({ theme }) => theme.color};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,6 +38,7 @@ const Made = styled.section`
   a {
     font-size: 16px;
     margin-top: 30px;
+    color: ${({ theme }) => theme.linkText};
   }
   a:hover {
     color: salmon;

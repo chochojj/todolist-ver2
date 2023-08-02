@@ -1,8 +1,10 @@
 import { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useRecoilValue } from "recoil";
+import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./style/theme";
+import { theme } from "./style/theme";
+import { useRecoilValue } from "recoil";
 import { openSideState, darkModeState } from "./atoms/atoms";
 const Header = lazy(() => import("./components/common/header"));
 const SideBar = lazy(() => import("./components/common/SideBar"));
@@ -11,6 +13,16 @@ const Diary = lazy(() => import("./pages/Diary"));
 const Schedule = lazy(() => import("./pages/Schedule"));
 const Madeby = lazy(() => import("./pages/MadeBy"));
 
+const Contain = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-image: ${({ theme }) => theme.backgroundUImage};
+`;
+
 function App() {
   const openSide = useRecoilValue(openSideState);
   const darkMode = useRecoilValue(darkModeState);
@@ -18,7 +30,7 @@ function App() {
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <BrowserRouter>
-        <div>
+        <Contain>
           <Header />
           <Suspense fallback={<div>Loading</div>}>
             <Routes>
@@ -29,7 +41,7 @@ function App() {
             </Routes>
             {openSide === true ? <SideBar /> : null}
           </Suspense>
-        </div>
+        </Contain>
       </BrowserRouter>
     </ThemeProvider>
   );
