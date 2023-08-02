@@ -1,6 +1,7 @@
 import { useRecoilState } from "recoil";
 import { openSideState, darkModeState } from "../../atoms/atoms";
 import styled from "styled-components";
+import { theme } from "../../style/theme";
 import rabbit from "../../assets/imgs/rabbit.png";
 import carrot from "../../assets/imgs/carrot.png";
 
@@ -10,10 +11,10 @@ const Mainheader = styled.header`
   left: 0;
   width: 100%;
   height: 70px;
-  background-color: rgba(241, 218, 197, 0.65);
+  background-color: ${({ theme }) => theme.headerColor};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   z-index: 5;
-
+  backdrop-filter: blur(5px);
   -ms-user-select: none;
   -moz-user-select: -moz-none;
   -khtml-user-select: none;

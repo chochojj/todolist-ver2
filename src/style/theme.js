@@ -10,6 +10,7 @@ export const lightTheme = {
   greenButton: "rgba(1, 107, 8, 0.4)",
   linkText: "green",
   calenderFocus: "rgba(254, 194, 194, 0.15)",
+  headerColor: "rgba(241, 218, 197, 0.65)",
 };
 
 export const darkTheme = {
@@ -28,6 +29,7 @@ export const darkTheme = {
   greenButton: "rgba(1, 107, 8, 0.7)",
   linkText: "orange",
   calenderFocus: "rgba(254, 194, 194, 0.55)",
+  headerColor: "rgba(241, 218, 197, 0.35)",
 };
 
 export const theme = {

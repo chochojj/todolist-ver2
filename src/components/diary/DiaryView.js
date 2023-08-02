@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import styled from 'styled-components';
+import { useState } from "react";
+import styled from "styled-components";
+import { theme } from "../../style/theme";
 
 const ViewDiary = styled.section`
   width: 100%;
@@ -27,6 +28,7 @@ const ViewDiary = styled.section`
     border: none;
     background: transparent;
     outline: none;
+    color: ${({ theme }) => theme.color};
   }
   .content {
     width: 90%;
@@ -45,6 +47,7 @@ const ViewDiary = styled.section`
     border: none;
     background: transparent;
     resize: none;
+    color: ${({ theme }) => theme.color};
   }
   textarea:focus {
     outline: none;
@@ -84,7 +87,7 @@ function DiaryView({
   const [editableTitle, setEditableTitle] = useState(title);
   const [editableContent, setEditableContent] = useState(content);
   const [editable, setEditable] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleTitleChange = (e) => {
     setEditableTitle(e.target.value);
@@ -96,7 +99,7 @@ function DiaryView({
 
   const handleSave = () => {
     if (!editableTitle || !editableContent) {
-      setErrorMessage('제목과 내용을 입력해주세요.');
+      setErrorMessage("제목과 내용을 입력해주세요.");
       return;
     }
     const newDiaries = [...diaries];
@@ -107,7 +110,7 @@ function DiaryView({
     };
     setDiaries(newDiaries);
     setEditable(false);
-    setErrorMessage(''); // 에러 메시지 초기화
+    setErrorMessage(""); // 에러 메시지 초기화
   };
 
   const handleBack = () => {

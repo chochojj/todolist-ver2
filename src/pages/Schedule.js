@@ -107,11 +107,12 @@ const Monthly = styled.div`
 `;
 
 function Schedule() {
+  const [value, onChange] = useState(new Date());
+  const [mark, setMark] = useState([]);
   const [diaries, setDiaries] = useState(() => {
     const storedDiaries = localStorage.getItem("diaries");
     return storedDiaries ? JSON.parse(storedDiaries) : [];
   });
-  const [value, onChange] = useState(new Date());
 
   // 해당 날짜에 일치하는 일기가 있는지 확인하는 함수
   const hasDiary = (date) => {
