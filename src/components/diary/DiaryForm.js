@@ -13,6 +13,7 @@ const FormDiary = styled.form`
     margin: 10px 0px 0px 0px;
     border: none;
     border-bottom: 1px;
+    color: ${({ theme }) => theme.color};
     background-color: ${({ theme }) => theme.greenInput};
   }
 
@@ -27,6 +28,7 @@ const FormDiary = styled.form`
     margin: 10px 0px 10px 0px;
     border: none;
     border-bottom: 1px;
+    color: ${({ theme }) => theme.color};
     background-color: ${({ theme }) => theme.orangeTextarea};
     resize: none;
   }
