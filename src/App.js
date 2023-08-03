@@ -29,7 +29,7 @@ function App() {
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <BrowserRouter>
+      <BrowserRouter basename="/todolist">
         <Contain>
           <Header />
           <Suspense fallback={<div>Loading</div>}>

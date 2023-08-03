@@ -65,7 +65,7 @@ function Madeby() {
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://github.com/chochojj/todolist"
+          href="https://github.com/chochojj/todolist-ver2"
         >
           🥕 코드 구경하기 🐇
         </a>
