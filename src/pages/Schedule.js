@@ -88,7 +88,7 @@ const Monthly = styled.div`
     color: white;
   }
   .react-calendar--selectRange .react-calendar__tile--hover {
-    background-color: ${({ theme }) => theme.calenderCheckBackground};
+    background-color: ${({ theme }) => theme.calenderRangeBackground};
   }
   .react-calendar__tile--range {
     background: rgba(254, 194, 194, 1);

@@ -32,7 +32,7 @@ export const darkTheme = {
   greenButton: "rgba(1, 107, 8, 0.7)",
   linkText: "orange",
   calenderFocusBackground: "rgba(0, 0, 0, 0.55)",
-  calenderRangeBackground: "rgba(0, 0, 0, 0.3)",
+  calenderRangeBackground: "rgba(0, 0, 0, 0.2)",
   calenderCheckBackground: "rgba(255, 201, 54, 0.7)",
   calenderFocusText: "rgba(255, 255, 255, 1)",
   headerColor: "rgba(241, 218, 197, 0.35)",
