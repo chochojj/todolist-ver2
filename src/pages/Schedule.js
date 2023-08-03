@@ -163,8 +163,6 @@ function Schedule() {
     const todoDates = todos.map((el) =>
       moment(el.date, "YYYY. MM. DD.").format("YYYY-MM-DD")
     );
-    console.log(todoDates);
-    console.log(todos);
     setTodoDate(todoDates);
   }, [todos]);
 
