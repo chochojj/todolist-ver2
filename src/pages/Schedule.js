@@ -91,7 +91,7 @@ const Monthly = styled.div`
     background-color: ${({ theme }) => theme.calenderRangeBackground};
   }
   .react-calendar__tile--range {
-    background: rgba(254, 194, 194, 1);
+    background:  ${({ theme }) => theme.calenderCheckBackground};
     color: ${({ theme }) => theme.calenderFocusText};
     border-radius: 0;
   }
