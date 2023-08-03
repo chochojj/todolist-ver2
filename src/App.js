@@ -34,7 +34,7 @@ function App() {
           <Header />
           <Suspense fallback={<div>Loading</div>}>
             <Routes>
-              <Route path="/todolist2" element={<TodoPage />} />
+              <Route path="/todolist-ver2" element={<TodoPage />} />
               <Route path="/diary" element={<Diary />} />
               <Route path="/schedule" element={<Schedule />} />
               <Route path="/madeby" element={<Madeby />} />
