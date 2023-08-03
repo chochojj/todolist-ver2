@@ -29,12 +29,12 @@ function App() {
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <BrowserRouter>
+      <BrowserRouter basename="/todolist2">
         <Contain>
           <Header />
           <Suspense fallback={<div>Loading</div>}>
             <Routes>
-              <Route path="/todolist-ver2" element={<TodoPage />} />
+              <Route path="/todolist2" element={<TodoPage />} />
               <Route path="/diary" element={<Diary />} />
               <Route path="/schedule" element={<Schedule />} />
               <Route path="/madeby" element={<Madeby />} />
