@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css"; // css import
+import moment from "moment";
+import "react-calendar/dist/Calendar.css";
 import styled from "styled-components";
 import { theme } from "../style/theme";
+import { useEffect } from "react";
 
 const Monthly = styled.div`
   width: 800px;
@@ -45,47 +47,52 @@ const Monthly = styled.div`
     } */
   .react-calendar__tile {
     height: 70px;
+    padding-top:20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
   }
   .react-calendar__tile:enabled:hover,
   .react-calendar__tile:enabled:focus {
-    background: ${({ theme }) => theme.calenderFocus};
+    background: ${({ theme }) => theme.calenderFocusBackground};
     color: rgba(130, 130, 130, 1);
     border-radius: 6px;
   }
   .react-calendar__tile--now {
-    background: ${({ theme }) => theme.calenderFocus};
+    background: ${({ theme }) => theme.calenderFocusBackground};
     border-radius: 6px;
     font-weight: bold;
-    color: rgba(130, 130, 130, 1);
+    color: ${({ theme }) => theme.calenderFocusText};
   }
   .react-calendar__tile--now:enabled:hover,
   .react-calendar__tile--now:enabled:focus {
-    background: ${({ theme }) => theme.calenderFocus};
+    background: ${({ theme }) => theme.calenderFocusBackground};
     border-radius: 6px;
     font-weight: bold;
-    color: rgba(130, 130, 130, 1);
+    color: ${({ theme }) => theme.calenderFocusText};
   }
   .react-calendar__tile--hasActive:enabled:hover,
   .react-calendar__tile--hasActive:enabled:focus {
-    background: ${({ theme }) => theme.calenderFocus};
+    background: ${({ theme }) => theme.calenderFocusBackground};
   }
   .react-calendar__tile--active {
-    background: ${({ theme }) => theme.calenderFocus};
+    background: ${({ theme }) => theme.calenderFocusBackground};
     border-radius: 6px;
     font-weight: bold;
     color: white;
   }
   .react-calendar__tile--active:enabled:hover,
   .react-calendar__tile--active:enabled:focus {
-    background: rgba(254, 194, 194, 1);
+    background: ${({ theme }) => theme.calenderCheckBackground};
     color: white;
   }
   .react-calendar--selectRange .react-calendar__tile--hover {
-    background-color: rgba(254, 194, 194, 1);
+    background-color: ${({ theme }) => theme.calenderCheckBackground};
   }
   .react-calendar__tile--range {
     background: rgba(254, 194, 194, 1);
-    color: rgba(130, 130, 130, 1);
+    color: ${({ theme }) => theme.calenderFocusText};
     border-radius: 0;
   }
   .react-calendar__tile--rangeStart {
@@ -93,42 +100,100 @@ const Monthly = styled.div`
     border-bottom-right-radius: 0;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    background: rgba(254, 194, 194, 0.3);
-    color: rgba(130, 130, 130, 1);
+    background: background: ${({ theme }) => theme.calenderRangeText};
+    color: ${({ theme }) => theme.calenderFocusText};
   }
   .react-calendar__tile--rangeEnd {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
-    background: rgba(254, 194, 194, 0.3);
-    color: rgba(130, 130, 130, 1);
+    background: ${({ theme }) => theme.calenderRangeText};
+    color: ${({ theme }) => theme.calenderFocusText};
+  }
+
+  .mark{
+    display: flex;
+
+    div{
+      margin: 0 2px;
+    }
+  }
+
+  .diary {
+    height: 7px;
+    width: 7px;
+    background-color: orange;
+    border-radius: 50%;
+    display: flex;
+    margin-left: 1px;
+  }
+  .todo {
+    height: 7px;
+    width: 7px;
+    background-color: green;
+    border-radius: 50%;
+    display: flex;
+    margin-left: 1px;
   }
 `;
 
 function Schedule() {
   const [value, onChange] = useState(new Date());
-  const [mark, setMark] = useState([]);
+  const [diaryDate, setDiaryDate] = useState([]);
+  const [todoDate, setTodoDate] = useState([]);
+
   const [diaries, setDiaries] = useState(() => {
     const storedDiaries = localStorage.getItem("diaries");
     return storedDiaries ? JSON.parse(storedDiaries) : [];
   });
+  const [todos, setTodos] = useState(() => {
+    const storedTodos = localStorage.getItem("todoList");
+    return storedTodos ? JSON.parse(storedTodos) : [];
+  });
 
-  // 해당 날짜에 일치하는 일기가 있는지 확인하는 함수
-  const hasDiary = (date) => {
-    return diaries.some((diary) => diary.date === date.toDateString());
-  };
+  useEffect(() => {
+    const diaryDates = diaries.map((el) =>
+      moment(el.date, "YYYY. MM. DD.").format("YYYY-MM-DD")
+    );
+    setDiaryDate(diaryDates);
+  }, [diaries]);
 
-  // 달력의 각 날짜마다 렌더링될 콘텐츠를 정의하는 함수
-  const tileContent = ({ date }) => {
-    if (hasDiary(date)) {
-      return <span>점</span>;
-    }
-    return null;
-  };
+  useEffect(() => {
+    const todoDates = todos.map((el) =>
+      moment(el.date, "YYYY. MM. DD.").format("YYYY-MM-DD")
+    );
+    console.log(todoDates);
+    console.log(todos);
+    setTodoDate(todoDates);
+  }, [todos]);
+
   return (
     <Monthly>
-      <Calendar onChange={onChange} value={value} tileContent={tileContent} />
+      <Calendar
+        onChange={onChange}
+        formatDay={(locale, date) => moment(date).format("DD")}
+        value={value}
+        showNeighboringMonth={false}
+        tileContent={({ date, view }) => {
+          let diary = [];
+          let todo = [];
+          if (diaryDate.find((x) => x === moment(date).format("YYYY-MM-DD"))) {
+            diary.push(<div className="diary"></div>);
+          }
+          if (todoDate.find((x) => x === moment(date).format("YYYY-MM-DD"))) {
+            todo.push(<div className="todo"></div>);
+          }
+          return (
+            <>
+              <div className="mark">
+                {diary}
+                {todo}
+              </div>
+            </>
+          );
+        }}
+      />
     </Monthly>
   );
 }

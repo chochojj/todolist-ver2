@@ -9,7 +9,10 @@ export const lightTheme = {
   greenInput: "rgba(1, 107, 8, 0.1)",
   greenButton: "rgba(1, 107, 8, 0.4)",
   linkText: "green",
-  calenderFocus: "rgba(254, 194, 194, 0.15)",
+  calenderFocusBackground: "rgba(254, 194, 194, 0.15)",
+  calenderRangeBackground: "rgba(254, 194, 194, 0.3)",
+  calenderCheckBackground: "rgba(254, 194, 194, 1)",
+  calenderFocusText: "rgba(130, 130, 130, 1)",
   headerColor: "rgba(241, 218, 197, 0.65)",
 };
 
@@ -28,7 +31,10 @@ export const darkTheme = {
   greenInput: "rgba(1, 107, 8, 0.4)",
   greenButton: "rgba(1, 107, 8, 0.7)",
   linkText: "orange",
-  calenderFocus: "rgba(254, 194, 194, 0.55)",
+  calenderFocusBackground: "rgba(0, 0, 0, 0.55)",
+  calenderRangeBackground: "rgba(0, 0, 0, 0.3)",
+  calenderCheckBackground: "rgba(255, 201, 54, 0.7)",
+  calenderFocusText: "rgba(255, 255, 255, 1)",
   headerColor: "rgba(241, 218, 197, 0.35)",
 };
 
