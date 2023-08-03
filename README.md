@@ -7,6 +7,8 @@
 ## 이전 버전
 [이전의 기록장](https://chochojj.github.io/todolist/)
 
+[깃허브](https://github.com/chochojj/todolist)
+
 Todo 관리를 위한 웹 애플리케이션입니다. <br/>
 페이지 단위로 로직을 작성하고 구성 컴포넌트에서 UI 디자인에 집중했습니다
 
