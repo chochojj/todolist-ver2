@@ -5,6 +5,7 @@
 
 
 ### 이전 버전
+
 [이전의 기록장](https://chochojj.github.io/todolist/)
 
 [깃허브](https://github.com/chochojj/todolist)
@@ -23,6 +24,7 @@ Todo 관리를 위한 웹 애플리케이션입니다. <br/>
 - 상단의 토끼 버튼을 눌러 다크모드를 적용할 수 있습니다
 - 투두와 일기를 작성한 날을 달력으로 확인할 수 있습니다
 
+
 ### 시연화면
 
 |                                                페이지 이동                                                |                                                할일 crud                                                 |                                                일기 crud                                                 |
@@ -34,7 +36,7 @@ Todo 관리를 위한 웹 애플리케이션입니다. <br/>
 |![다크모드](https://github.com/chochojj/todolist-ver2/assets/104323906/2afc9cc0-2de0-41e1-8337-b33da346f59d) | ![달력](https://github.com/chochojj/todolist-ver2/assets/104323906/1431c51e-5f97-4a01-b375-02e2e9af50d5)
  |
 
+### 이후 적용할 기능
+- 일기 조회와 작성 로직 분리
+- MUI를 활용한 디자인으로 교체
 
-### 추가 구현 계획
-
-- todo와 일기 데이터에 작성일자 키를 추가하여 달력에 작성한 날이 표기되는 기능을 추가할 계획입니다
