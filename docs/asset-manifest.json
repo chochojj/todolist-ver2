@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/todolist-ver2/static/css/main.d6610da5.css",
-    "main.js": "/todolist-ver2/static/js/main.23c79c29.js",
+    "main.js": "/todolist-ver2/static/js/main.295a3be9.js",
     "static/js/335.59b3aba7.chunk.js": "/todolist-ver2/static/js/335.59b3aba7.chunk.js",
-    "static/js/687.98163034.chunk.js": "/todolist-ver2/static/js/687.98163034.chunk.js",
+    "static/js/687.8fdadeb4.chunk.js": "/todolist-ver2/static/js/687.8fdadeb4.chunk.js",
     "static/js/555.0ea2eaae.chunk.js": "/todolist-ver2/static/js/555.0ea2eaae.chunk.js",
     "static/js/636.d3d47b83.chunk.js": "/todolist-ver2/static/js/636.d3d47b83.chunk.js",
     "static/css/790.a1eb2007.chunk.css": "/todolist-ver2/static/css/790.a1eb2007.chunk.css",
     "static/js/790.c2ac5d53.chunk.js": "/todolist-ver2/static/js/790.c2ac5d53.chunk.js",
-    "static/js/152.2d5f8fe3.chunk.js": "/todolist-ver2/static/js/152.2d5f8fe3.chunk.js",
+    "static/js/152.889de70d.chunk.js": "/todolist-ver2/static/js/152.889de70d.chunk.js",
     "static/js/423.3a8856b1.chunk.js": "/todolist-ver2/static/js/423.3a8856b1.chunk.js",
     "static/media/NanumSquareNeo-bRg.ttf": "/todolist-ver2/static/media/NanumSquareNeo-bRg.dc621da24afcf6c33e03.ttf",
     "static/media/NanumSquareNeo-aLt.ttf": "/todolist-ver2/static/media/NanumSquareNeo-aLt.8372ddf971ec32258e72.ttf",
@@ -16,18 +16,18 @@
     "static/media/lay.png": "/todolist-ver2/static/media/lay.43e8ef891bca2c8313c8.png",
     "index.html": "/todolist-ver2/index.html",
     "main.d6610da5.css.map": "/todolist-ver2/static/css/main.d6610da5.css.map",
-    "main.23c79c29.js.map": "/todolist-ver2/static/js/main.23c79c29.js.map",
+    "main.295a3be9.js.map": "/todolist-ver2/static/js/main.295a3be9.js.map",
     "335.59b3aba7.chunk.js.map": "/todolist-ver2/static/js/335.59b3aba7.chunk.js.map",
-    "687.98163034.chunk.js.map": "/todolist-ver2/static/js/687.98163034.chunk.js.map",
+    "687.8fdadeb4.chunk.js.map": "/todolist-ver2/static/js/687.8fdadeb4.chunk.js.map",
     "555.0ea2eaae.chunk.js.map": "/todolist-ver2/static/js/555.0ea2eaae.chunk.js.map",
     "636.d3d47b83.chunk.js.map": "/todolist-ver2/static/js/636.d3d47b83.chunk.js.map",
     "790.a1eb2007.chunk.css.map": "/todolist-ver2/static/css/790.a1eb2007.chunk.css.map",
     "790.c2ac5d53.chunk.js.map": "/todolist-ver2/static/js/790.c2ac5d53.chunk.js.map",
-    "152.2d5f8fe3.chunk.js.map": "/todolist-ver2/static/js/152.2d5f8fe3.chunk.js.map",
+    "152.889de70d.chunk.js.map": "/todolist-ver2/static/js/152.889de70d.chunk.js.map",
     "423.3a8856b1.chunk.js.map": "/todolist-ver2/static/js/423.3a8856b1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d6610da5.css",
-    "static/js/main.23c79c29.js"
+    "static/js/main.295a3be9.js"
   ]
 }
