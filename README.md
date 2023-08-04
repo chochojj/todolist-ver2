@@ -1,7 +1,16 @@
-# Todo App
+# todolist ver2
+[새로운 기록장](https://chochojj.github.io/todolist-ver2/)
+
+이전에 작성한 todolist를 recoil을 적용하여 디벨롭합니다
+
+
+### 이전 버전
+[이전의 기록장](https://chochojj.github.io/todolist/)
+
+[깃허브](https://github.com/chochojj/todolist)
 
 Todo 관리를 위한 웹 애플리케이션입니다. <br/>
-[나만의 기록장 사용하기](https://chochojj.github.io/todolist/)
+페이지 단위로 로직을 작성하고 구성 컴포넌트에서 UI 디자인에 집중했습니다
 
 ### Features
 
@@ -9,7 +18,10 @@ Todo 관리를 위한 웹 애플리케이션입니다. <br/>
 - todo를 작성하고 완료한 일을 체크하여 일정을 관리할 수 있습니다
 - todo 상단의 남을 할일 갯수를 시각화하여 좀 더 편한 사용자 경험을 제공합니다
 - 일기 작성 페이지에서 일기를 작성하고 수정, 삭제할 수 있습니다
-- todo와 일기 데이터를 localstorage로 관리하여 영구적으로 보관할 수 있습니다
+- todo와 일기 데이터를 localstorage로 관리하여 영구적으로 보관할 수 있습니다 
+#### new!
+- 상단의 토끼 버튼을 눌러 다크모드를 적용할 수 있습니다
+- 투두와 일기를 작성한 날을 달력으로 확인할 수 있습니다
 
 ### 시연화면
 
@@ -19,7 +31,9 @@ Todo 관리를 위한 웹 애플리케이션입니다. <br/>
 
 |                                                다크모드                                                 |                                                작성일 조회                                                 |
 | :-----------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------: |
-| ![다크모드](https://github.com/chochojj/todolist/assets/104323906/5d5c24a3-0b8d-4840-b01b-9fc6e4d9cb46) | ![작성일 조회](https://github.com/chochojj/todolist/assets/104323906/c96285ac-3093-45b9-85b8-3e997e750588) |
+|![다크모드](https://github.com/chochojj/todolist-ver2/assets/104323906/2afc9cc0-2de0-41e1-8337-b33da346f59d) | ![달력](https://github.com/chochojj/todolist-ver2/assets/104323906/1431c51e-5f97-4a01-b375-02e2e9af50d5)
+ |
+
 
 ### 추가 구현 계획
 
